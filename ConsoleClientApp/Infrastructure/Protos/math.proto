@@ -1,0 +1,31 @@
+﻿syntax="proto3";
+option csharp_namespace="ConsoleClientApp";
+
+package math;
+
+import "google/protobuf/duration.proto"; 
+import "google/protobuf/timestamp.proto";
+
+message RequestInput{
+	repeated int32 numbers =1;
+}
+
+message RequestMessage{
+	string nameAction =1;
+}
+
+message ListResultReply{
+  repeated ResultReply Results = 1;
+}
+
+message ResultReply{
+	int32 calculationType=1;
+	int32 sum=2;
+	google.protobuf.Duration duration = 3;
+	google.protobuf.Timestamp currentDateTime=4;
+}
+
+service Translator{
+	rpc Translate(RequestInput) returns (ListResultReply);
+	rpc TransleateMessageToDb(RequestMessage) returns (ListResultReply);
+}

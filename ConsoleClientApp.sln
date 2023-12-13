@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleClientApp", "ConsoleClientApp\ConsoleClientApp.csproj", "{AF59D484-7B15-4DCE-A487-5FB183D6D59E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcWithDbService", "GrpcWithDbService\GrpcWithDbService.csproj", "{3BA7610C-9143-4A07-B432-AFC314824866}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{F1E29357-7329-4B87-ACD9-52F60823CF6A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Contracts", "Service.Contracts\Service.Contracts.csproj", "{D304F88D-2286-4DA8-9F8B-4EBFC140AE85}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.Extensions", "Services.Extentions\Services.Extensions.csproj", "{DC5F6D3A-FCDA-43E2-859B-FB3BAA53347B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcMathService", "GrpcMathService\GrpcMathService\GrpcMathService.csproj", "{61366F84-FE73-4309-BE7B-B12094508A6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF59D484-7B15-4DCE-A487-5FB183D6D59E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF59D484-7B15-4DCE-A487-5FB183D6D59E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF59D484-7B15-4DCE-A487-5FB183D6D59E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF59D484-7B15-4DCE-A487-5FB183D6D59E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BA7610C-9143-4A07-B432-AFC314824866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BA7610C-9143-4A07-B432-AFC314824866}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BA7610C-9143-4A07-B432-AFC314824866}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BA7610C-9143-4A07-B432-AFC314824866}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D304F88D-2286-4DA8-9F8B-4EBFC140AE85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D304F88D-2286-4DA8-9F8B-4EBFC140AE85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D304F88D-2286-4DA8-9F8B-4EBFC140AE85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D304F88D-2286-4DA8-9F8B-4EBFC140AE85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC5F6D3A-FCDA-43E2-859B-FB3BAA53347B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC5F6D3A-FCDA-43E2-859B-FB3BAA53347B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC5F6D3A-FCDA-43E2-859B-FB3BAA53347B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC5F6D3A-FCDA-43E2-859B-FB3BAA53347B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61366F84-FE73-4309-BE7B-B12094508A6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61366F84-FE73-4309-BE7B-B12094508A6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61366F84-FE73-4309-BE7B-B12094508A6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61366F84-FE73-4309-BE7B-B12094508A6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D304F88D-2286-4DA8-9F8B-4EBFC140AE85} = {F1E29357-7329-4B87-ACD9-52F60823CF6A}
+		{DC5F6D3A-FCDA-43E2-859B-FB3BAA53347B} = {F1E29357-7329-4B87-ACD9-52F60823CF6A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D84BA57-265A-41C3-9E71-1D943B93CFC0}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,26 @@
+﻿namespace GrpcWithDbService.Entities;
+
+/// <summary>
+/// результат вычислений суммы элементов массива, которые клиент ConsoleClientApp получил от микросервиса GrpcMathService
+/// </summary>
+public class CalcResultEntity:IEntityId
+{
+    public int Id { get; set; }
+    /// <summary>
+    /// полное описание для вывода пользователю в консоль
+    /// </summary>
+    public string Description { get; set; }
+    public int CalculationType { get; set; }
+    /// <summary>
+    /// сумма элементов массива
+    /// </summary>
+    public int Sum { get; set; }
+    /// <summary>
+    /// время , потраченно на подсчёт суммы массива чисел
+    /// </summary>
+    public TimeSpan Duration { get; set; }
+    /// <summary>
+    /// дата расчёта
+    /// </summary>
+    public DateTime CurrentDateTime { get; set; }
+}
