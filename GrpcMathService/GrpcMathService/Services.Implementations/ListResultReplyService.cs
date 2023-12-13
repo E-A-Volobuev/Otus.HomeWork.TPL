@@ -52,11 +52,26 @@ internal sealed class ListResultReplyService: IListResultReplyService
     /// <returns></returns>
     private ResultReply GetObjWithTrackTime(IEnumerable<int> collection, TypeCalc typeCalc)
     {
+         ResultReply noneCalc = new();
+        ///вычисляем время для 100 000 , 1000 000 и 10 000 000 итераций
+        (ResultReply reply, Stopwatch watchByOneHundredThousand) = TimeHelper(noneCalc, 100000, collection, typeCalc, GetResultByTypeCalc);
+        (ResultReply replyTwo, Stopwatch watchByMillion) = TimeHelper(noneCalc, 1000000, collection, typeCalc, GetResultByTypeCalc);
+        (ResultReply replyThree, Stopwatch watchByTenMillion) = TimeHelper(noneCalc, 10000000, collection, typeCalc, GetResultByTypeCalc);
+
+        noneCalc = replyThree;
+        noneCalc.DurationByOneHundredThousand = Duration.FromTimeSpan(watchByOneHundredThousand.Elapsed);
+        noneCalc.DurationByMillion = Duration.FromTimeSpan(watchByMillion.Elapsed);
+        noneCalc.DurationByTenMillion = Duration.FromTimeSpan(watchByTenMillion.Elapsed);
+
+        return noneCalc;
+    }
+    private (ResultReply reply, Stopwatch watch) TimeHelper(ResultReply noneCalc,int count, IEnumerable<int> collection, TypeCalc typeCalc,Func<IEnumerable<int>, TypeCalc, ResultReply> operation)
+    {
         Stopwatch watch = new();
         watch.Start();
-        ResultReply noneCalc = GetResultByTypeCalc(collection, typeCalc);
+        Parallel.For(0, count, i =>noneCalc = operation(collection, typeCalc));
         watch.Stop();
-        noneCalc.Duration = Duration.FromTimeSpan(watch.Elapsed);
-        return noneCalc;
+
+        return (noneCalc,watch);
     }
 }

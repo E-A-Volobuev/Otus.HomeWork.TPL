@@ -13,7 +13,9 @@ internal sealed class ConsoleConstants
     public const string RepeatMessage = "Что-то пошло не так, попробуйте ещё раз";
     public const string SumElementsByArray = "Сумма элементов массива: ";
     public const string CalculationType = "Тип расчёта: ";
-    public const string DurationCalc = "Время выполнения: ";
+    public const string DurationCalcByOneHundredThousand = "Время выполнения для 100 000 итераций: ";
+    public const string DurationCalcByMillion = "Время выполнения для 1000 000 итераций: ";
+    public const string DurationCalcByTenMillion = "Время выполнения для 10 000 000 итераций: ";
     public const string StartDateTime = "Дата: ";
     public const string SaveResultCalc = "Сохранить результаты расчёта?\n1 - Да.\n2 - Нет.";
     public const string TryAgain = "Что-то пошло не так... попробуйте ещё раз...";

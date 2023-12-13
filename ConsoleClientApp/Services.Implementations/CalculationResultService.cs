@@ -36,7 +36,9 @@ internal sealed class CalculationResultService: ICalculationResultService
             Sum = reply.Sum,
             CalculationType = (CalculationType)reply.CalculationType,
             CurrentDateTime = reply.CurrentDateTime.ToDateTime(),
-            Duration = reply.Duration.ToTimeSpan(),
+            DurationByOneHundredThousand = reply.DurationByOneHundredThousand.ToTimeSpan(),
+            DurationByMillion = reply.DurationByMillion.ToTimeSpan(),
+            DurationByTenMillion = reply.DurationByTenMillion.ToTimeSpan(),
         };
         dto.Description = GetDescription(dto);
 
@@ -46,7 +48,9 @@ internal sealed class CalculationResultService: ICalculationResultService
     {
        return string.Concat(ConsoleConstants.CalculationType, dto.CalculationType.DisplayName(), "\n",
                             ConsoleConstants.SumElementsByArray, dto.Sum, "\n",
-                            ConsoleConstants.DurationCalc, dto.Duration.ToString(), "\n",
+                            ConsoleConstants.DurationCalcByOneHundredThousand, dto.DurationByOneHundredThousand.ToString(), "\n",
+                            ConsoleConstants.DurationCalcByMillion, dto.DurationByMillion.ToString(), "\n",
+                            ConsoleConstants.DurationCalcByTenMillion, dto.DurationByTenMillion.ToString(), "\n",
                             ConsoleConstants.StartDateTime, dto.CurrentDateTime.ToString("d"), "\n");
     }
 }

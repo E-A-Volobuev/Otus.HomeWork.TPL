@@ -21,8 +21,10 @@ message ListResultReply{
 message ResultReply{
 	int32 calculationType=1;
 	int32 sum=2;
-	google.protobuf.Duration duration = 3;
-	google.protobuf.Timestamp currentDateTime=4;
+	google.protobuf.Duration durationByOneHundredThousand = 3;
+	google.protobuf.Duration durationByMillion = 4;
+	google.protobuf.Duration durationByTenMillion = 5;
+	google.protobuf.Timestamp currentDateTime=6;
 }
 
 service Translator{

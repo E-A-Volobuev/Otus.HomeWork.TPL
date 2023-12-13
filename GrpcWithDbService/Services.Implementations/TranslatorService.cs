@@ -50,7 +50,9 @@ internal sealed class TranslatorService:Translator.TranslatorBase
             reply.CalculationType = item.CalculationType;
             reply.CurrentDateTime = Timestamp.FromDateTime(item.CurrentDateTime);
             reply.Sum = item.Sum;
-            reply.Duration= Duration.FromTimeSpan(item.Duration);
+            reply.DurationByOneHundredThousand= Duration.FromTimeSpan(item.DurationByOneHundredThousand);
+            reply.DurationByMillion = Duration.FromTimeSpan(item.DurationByMillion);
+            reply.DurationByTenMillion= Duration.FromTimeSpan(item.DurationByTenMillion);
 
             if (reply != null)
                 replyList.Results.Add(reply);

@@ -16,9 +16,19 @@ public class CalcResultEntity:IEntityId
     /// </summary>
     public int Sum { get; set; }
     /// <summary>
-    /// время , потраченно на подсчёт суммы массива чисел
+    /// время , потраченно на подсчёт суммы массива чисел для 100 000 операций
     /// </summary>
-    public TimeSpan Duration { get; set; }
+    public TimeSpan DurationByOneHundredThousand { get; set; }
+
+    /// <summary>
+    /// время , потраченно на подсчёт суммы массива чисел для 1000 000 операций
+    /// </summary>
+    public TimeSpan DurationByMillion { get; set; }
+
+    // <summary>
+    /// время , потраченно на подсчёт суммы массива чисел для 10 000 000 операций
+    /// </summary>
+    public TimeSpan DurationByTenMillion { get; set; }
     /// <summary>
     /// дата расчёта
     /// </summary>
