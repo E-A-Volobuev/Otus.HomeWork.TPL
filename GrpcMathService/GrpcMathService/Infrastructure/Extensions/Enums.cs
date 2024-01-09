@@ -18,7 +18,11 @@ internal enum TypeCalc
     /// </summary>
     ParallelInterlocked,
     /// <summary>
+    /// через потоки
+    /// </summary>
+    Thread,
+    /// <summary>
     /// параллельно через LINQ
     /// </summary>
-    ParallelLINQ
+    ParallelLINQ,
 }

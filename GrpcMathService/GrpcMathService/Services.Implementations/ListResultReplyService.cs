@@ -26,6 +26,7 @@ internal sealed class ListResultReplyService: IListResultReplyService
         resultList.Results.Add(GetObjWithTrackTime(collection, TypeCalc.ParallelLocker));
         resultList.Results.Add(GetObjWithTrackTime(collection, TypeCalc.ParallelInterlocked));
         resultList.Results.Add(GetObjWithTrackTime(collection, TypeCalc.ParallelLINQ));
+        resultList.Results.Add(GetObjWithTrackTime(collection, TypeCalc.Thread));
 
         return resultList;
     }
@@ -54,9 +55,9 @@ internal sealed class ListResultReplyService: IListResultReplyService
     {
          ResultReply noneCalc = new();
         ///вычисляем время для 100 000 , 1000 000 и 10 000 000 итераций
-        (ResultReply reply, Stopwatch watchByOneHundredThousand) = TimeHelper(noneCalc, 100000, collection, typeCalc, GetResultByTypeCalc);
-        (ResultReply replyTwo, Stopwatch watchByMillion) = TimeHelper(noneCalc, 1000000, collection, typeCalc, GetResultByTypeCalc);
-        (ResultReply replyThree, Stopwatch watchByTenMillion) = TimeHelper(noneCalc, 10000000, collection, typeCalc, GetResultByTypeCalc);
+        (ResultReply reply, Stopwatch watchByOneHundredThousand) = TimeHelper(noneCalc, 10, collection, typeCalc, GetResultByTypeCalc);
+        (ResultReply replyTwo, Stopwatch watchByMillion) = TimeHelper(noneCalc, 100, collection, typeCalc, GetResultByTypeCalc);
+        (ResultReply replyThree, Stopwatch watchByTenMillion) = TimeHelper(noneCalc, 200, collection, typeCalc, GetResultByTypeCalc);
 
         noneCalc = replyThree;
         noneCalc.DurationByOneHundredThousand = Duration.FromTimeSpan(watchByOneHundredThousand.Elapsed);

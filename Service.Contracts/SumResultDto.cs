@@ -46,6 +46,8 @@ public enum CalculationType
     ParallelLocker,
     [Display(Name = "Параллельное (interlocked)")]
     ParallelInterlocked,
+    [Display(Name = "Параллельное (Thread + ConcurrentBag)")]
+    Thread,
     [Display(Name = "Параллельное (LINQ)")]
     ParallelLINQ
 }
@@ -59,6 +61,7 @@ public static class CalculationTypeExtender
             CalculationType.None => "Последовательынй перебор",
             CalculationType.ParallelLocker => "Параллельное (locker)",
             CalculationType.ParallelInterlocked => "Параллельное (interlocked)",
+            CalculationType.Thread => "Параллельное (Thread + ConcurrentBag)",
             _ => "Параллельное (LINQ)"
         };
     }
